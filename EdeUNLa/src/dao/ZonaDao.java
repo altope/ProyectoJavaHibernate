@@ -19,7 +19,7 @@ public class ZonaDao {
 	protected ZonaDao() {
 	}
 
-	public static ZonaDao getIntance() {
+	public static ZonaDao getInstance() {
 		if (instancia == null)
 			instancia = new ZonaDao();
 		return instancia;
@@ -90,6 +90,17 @@ public class ZonaDao {
 		return objeto;
 	}
 
+	public Zona traerZona(String nombre) throws HibernateException {
+		Zona objeto = null;
+
+		try {
+			iniciaOperacion();
+			objeto = (Zona) session.get(Zona.class, nombre);
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
 
 
 }

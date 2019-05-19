@@ -1,16 +1,35 @@
 package datos;
 
 public class Medidor {
-	
+
+	private long idMedidor;
 	private int nroSerie;
 	private String categoria;
 	private double energiaConsumida;
 	private String direccion;
 	private Cliente cliente;
 	private boolean esBaja;
-	
-	
-	
+
+	public Medidor() {}
+
+	public Medidor(int nroSerie, String categoria, double energiaConsumida, String direccion, Cliente cliente,
+			boolean esBaja) {
+		this.nroSerie = nroSerie;
+		this.categoria = categoria;
+		this.energiaConsumida = energiaConsumida;
+		this.direccion = direccion;
+		this.cliente = cliente;
+		this.esBaja = esBaja;
+	}
+
+	public long getIdMedidor() {
+		return idMedidor;
+	}
+
+	protected void setIdMedidor(long idMedidor) {
+		this.idMedidor = idMedidor;
+	}
+
 	public int getNroSerie() {
 		return nroSerie;
 	}
@@ -47,26 +66,11 @@ public class Medidor {
 	public void setEsBaja(boolean esBaja) {
 		this.esBaja = esBaja;
 	}
-	
-	
-	public Medidor(int nroSerie, String categoria, double energiaConsumida, String direccion, Cliente cliente,
-			boolean esBaja) {
-		this.nroSerie = nroSerie;
-		this.categoria = categoria;
-		this.energiaConsumida = energiaConsumida;
-		this.direccion = direccion;
-		this.cliente = cliente;
-		this.esBaja = esBaja;
-	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Medidor [nroSerie=" + nroSerie + ", categoria=" + categoria + ", energiaConsumida=" + energiaConsumida
 				+ ", direccion=" + direccion + ", cliente=" + cliente + ", esBaja=" + esBaja + "]";
 	}
-	
-	
-	
 
 }

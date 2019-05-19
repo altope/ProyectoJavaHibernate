@@ -1,17 +1,20 @@
 package datos;
 
 public class ClienteBajaDemanda extends Cliente{
-	
-	
+
+
 	private String cuil;
 	private String apellido;
 	private String nombre;
-	
-	
-	public ClienteBajaDemanda(int idCliente, Zona zona, int dni, String apellido, String nombre, DatosContacto datos) {
-		super(idCliente, zona, dni, apellido, nombre, datos);
-	}
 
+	public ClienteBajaDemanda() {}
+
+	public ClienteBajaDemanda(String cuil, String apellido, String nombre) {
+		super();
+		this.cuil = cuil;
+		this.apellido = apellido;
+		this.nombre = nombre;
+	}
 
 	public String getCuil() {
 		return cuil;
@@ -32,7 +35,7 @@ public class ClienteBajaDemanda extends Cliente{
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -42,7 +45,7 @@ public class ClienteBajaDemanda extends Cliente{
 	public String toString() {
 		return this.toString() + "ClienteBajaDemanda [cuil=" + cuil + ", apellido=" + apellido + ", nombre=" + nombre + "]";
 	}
-  
-	
-	
+
+
+
 }

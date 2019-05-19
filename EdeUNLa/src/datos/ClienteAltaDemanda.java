@@ -1,20 +1,22 @@
 package datos;
 
 public class ClienteAltaDemanda extends Cliente{
-	
-	
+
+
 	private String cuil;
 	private String razonSocial;
 	private int potencia;
 	private String tension;
-	
-	
-	
-	public ClienteAltaDemanda(int idCliente, Zona zona, int dni, String apellido, String nombre, DatosContacto datos) {
-		super(idCliente, zona, dni, apellido, nombre, datos);
+
+	public ClienteAltaDemanda() {}
+
+	public ClienteAltaDemanda(String cuil, String razonSocial, int potencia, String tension) {
+		super();
+		this.cuil = cuil;
+		this.razonSocial = razonSocial;
+		this.potencia = potencia;
+		this.tension = tension;
 	}
-
-
 
 	public String getCuil() {
 		return cuil;
@@ -54,9 +56,5 @@ public class ClienteAltaDemanda extends Cliente{
 		return this.toString() +"ClienteAltaDemanda [cuil=" + cuil + ", razonSocial=" + razonSocial + ", potencia=" + potencia
 				+ ", tension=" + tension + "]";
 	}
-	
-	
-	
-	
 
 }

@@ -2,11 +2,30 @@ package datos;
 
 public class DatosContacto {
 
-	private int idContacto;
+	private long idContacto;
 	private String telefono;
 	private String movil;
 	private String domicilio;
 	private String email;
+	private Cliente cliente;
+
+	public DatosContacto() {}
+
+	public DatosContacto(String telefono, String movil, String domicilio, String email, Cliente cliente) {
+		this.telefono = telefono;
+		this.movil = movil;
+		this.domicilio = domicilio;
+		this.email = email;
+		this.cliente = cliente;
+	}
+
+	public long getIdContacto() {
+		return idContacto;
+	}
+
+	protected void setIdContacto(long idContacto) {
+		this.idContacto = idContacto;
+	}
 
 	public String getTelefono() {
 		return telefono;
@@ -40,20 +59,14 @@ public class DatosContacto {
 		this.email = email;
 	}
 
-	public int getIdContacto() {
-		return idContacto;
+
+
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	protected void setIdContacto(int idContacto) {
-		this.idContacto = idContacto;
-	}
-
-	public DatosContacto(int idContacto, String telefono, String movil, String domicilio, String email) {
-		this.idContacto = idContacto;
-		this.telefono = telefono;
-		this.movil = movil;
-		this.domicilio = domicilio;
-		this.email = email;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@Override

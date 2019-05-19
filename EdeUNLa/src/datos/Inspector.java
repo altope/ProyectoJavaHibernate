@@ -4,19 +4,36 @@ import java.util.Set;
 
 public class Inspector {
 
+	private long idInspertor;
 	private int nroLegajo;
 	private int dni;
 	private Set<Zona> lstZonas;
 	private String nombre;
 	private String apellido;
 
+	public Inspector() {}
+
 	public Inspector(int nroLegajo, int dni, Set<Zona> lstZonas, String nombre, String apellido) {
 		this.nroLegajo = nroLegajo;
 		this.dni = dni;
-		this.lstZonas = lstZonas;
+		this.setLstZonas(lstZonas);
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
+
+
+
+	public long getIdInspertor() {
+		return idInspertor;
+	}
+
+
+
+	protected void setIdInspertor(long idInspertor) {
+		this.idInspertor = idInspertor;
+	}
+
+
 
 	public int getNroLegajo() {
 		return nroLegajo;

@@ -20,7 +20,7 @@ public class LecturaDao {
 	protected LecturaDao() {
 	}
 
-	public static LecturaDao getIntance() {
+	public static LecturaDao getInstance() {
 		if (instancia == null)
 			instancia = new LecturaDao();
 		return instancia;

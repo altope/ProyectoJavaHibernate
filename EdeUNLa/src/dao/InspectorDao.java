@@ -17,7 +17,7 @@ public class InspectorDao {
 	protected InspectorDao() {
 	}
 
-	public static InspectorDao getIntance() {
+	public static InspectorDao getInstance() {
 		if (instancia == null)
 			instancia = new InspectorDao();
 		return instancia;
@@ -74,6 +74,18 @@ public class InspectorDao {
 		} finally {
 			session.close();
 		}
+	}
+	
+	public Inspector traerInspector(long idInspector) throws HibernateException {
+		Inspector objeto = null;
+
+		try {
+			iniciaOperacion();
+			objeto = (Inspector) session.get(Inspector.class, idInspector);
+		} finally {
+			session.close();
+		}
+		return objeto;
 	}
 
 	public Inspector traerInspector(int dni) throws HibernateException {

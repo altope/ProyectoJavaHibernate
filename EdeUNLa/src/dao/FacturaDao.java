@@ -7,6 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.Cliente;
 import datos.Factura;
 
 public class FacturaDao {
@@ -20,7 +21,7 @@ public class FacturaDao {
 	protected FacturaDao() {
 	}
 
-	public static FacturaDao getIntance() {
+	public static FacturaDao getInstance() {
 		if (instancia == null)
 			instancia = new FacturaDao();
 		return instancia;
@@ -78,6 +79,17 @@ public class FacturaDao {
 			session.close();
 		}
 	}
+	
+	public Factura traerFactura(int idFactura){
+		Factura objeto = null;
+		try {
+			iniciaOperacion();
+			objeto = (Factura)session.createQuery("from Factura f where f.idFactura ="+idFactura).uniqueResult();
+		} finally {
+			session.close();
+		} 
+		return objeto;
+	} 
 
 	@SuppressWarnings("unchecked")
 	public List<Factura> traerFacturas() throws HibernateException{

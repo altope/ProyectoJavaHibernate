@@ -4,6 +4,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.Cliente;
 import datos.DatosContacto;
 
 public class DatosContactoDao {
@@ -17,7 +18,7 @@ public class DatosContactoDao {
 	protected DatosContactoDao() {
 	}
 
-	public static DatosContactoDao getIntance() {
+	public static DatosContactoDao getInstance() {
 		if (instancia == null)
 			instancia = new DatosContactoDao();
 		return instancia;
@@ -82,6 +83,18 @@ public class DatosContactoDao {
 		try {
 			iniciaOperacion();
 			objeto = (DatosContacto) session.get(DatosContacto.class, idContacto);
+		} finally {
+			session.close();
+		}
+		return objeto;
+	}
+
+	public DatosContacto traerDatosContacto(Cliente cliente) throws HibernateException {
+		DatosContacto objeto = null;
+
+		try {
+			iniciaOperacion();
+			objeto = (DatosContacto) session.get(DatosContacto.class, cliente);
 		} finally {
 			session.close();
 		}

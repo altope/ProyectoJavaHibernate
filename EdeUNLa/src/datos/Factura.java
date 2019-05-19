@@ -5,12 +5,31 @@ import java.util.Set;
 
 public class Factura {
 
-	private int idFactura;
+	private long idFactura;
 	private String cliente;
 	private LocalDate fecha;
 	private int nroMedidor;
 	private String observacion;
-	private Set<ItemFacturacion> item;
+	private Set<ItemFactura> item;
+
+	public Factura() {}
+
+	public Factura(String cliente, LocalDate fecha, int nroMedidor, String observacion,
+			Set<ItemFactura> item) {
+		this.cliente = cliente;
+		this.fecha = fecha;
+		this.nroMedidor = nroMedidor;
+		this.observacion = observacion;
+		this.setItem(item);
+	}
+
+	public long getIdFactura() {
+		return idFactura;
+	}
+
+	protected void setIdFactura(long idFactura) {
+		this.idFactura = idFactura;
+	}
 
 	public String getCliente() {
 		return cliente;
@@ -44,29 +63,11 @@ public class Factura {
 		this.observacion = observacion;
 	}
 
-	public Set<ItemFacturacion> getItem() {
+	public Set<ItemFactura> getItem() {
 		return item;
 	}
 
-	public void setItem(Set<ItemFacturacion> item) {
-		this.item = item;
-	}
-
-	public int getIdFactura() {
-		return idFactura;
-	}
-
-	protected void setIdFactura(int idFactura) {
-		this.idFactura = idFactura;
-	}
-
-	public Factura(int idFactura, String cliente, LocalDate fecha, int nroMedidor, String observacion,
-			Set<ItemFacturacion> item) {
-		this.idFactura = idFactura;
-		this.cliente = cliente;
-		this.fecha = fecha;
-		this.nroMedidor = nroMedidor;
-		this.observacion = observacion;
+	public void setItem(Set<ItemFactura> item) {
 		this.item = item;
 	}
 

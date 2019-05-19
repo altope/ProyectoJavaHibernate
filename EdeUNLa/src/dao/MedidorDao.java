@@ -20,7 +20,7 @@ public class MedidorDao {
 	protected MedidorDao() {
 	}
 
-	public static MedidorDao getIntance() {
+	public static MedidorDao getInstance() {
 		if (instancia == null)
 			instancia = new MedidorDao();
 		return instancia;
@@ -79,7 +79,7 @@ public class MedidorDao {
 		}
 	}
 
-	public Medidor traerMedidor(int id) throws HibernateException {
+	public Medidor traerMedidor(long idMedidor) throws HibernateException {
 		Medidor objeto = null;
 
 		try {
