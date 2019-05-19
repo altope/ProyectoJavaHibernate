@@ -9,5 +9,5 @@
 <br>
 ***Enlace para descargar el proyecto en comprimido zip:***
 - https://github.com/AndyUNLa/ProyectoJavaHibernate/zipball/master/
-
+<br>
 	`Ingresar al enlace para descargarlo automáticamente`
