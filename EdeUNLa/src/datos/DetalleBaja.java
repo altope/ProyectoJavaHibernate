@@ -2,6 +2,7 @@ package datos;
 
 public class DetalleBaja {
 
+	private long idDetalleBaja;
 	private String detalleConcepto;
 	private String unidad;
 	private int desde;
@@ -17,6 +18,14 @@ public class DetalleBaja {
 		this.desde = desde;
 		this.hasta = hasta;
 		this.valor = valor;
+	}
+	
+	public long getIdDetalleBaja() {
+		return idDetalleBaja;
+	}
+
+	protected void setIdDetalleBaja(long idDetalleBaja) {
+		this.idDetalleBaja = idDetalleBaja;
 	}
 
 	public String getDetalleConcepto() {

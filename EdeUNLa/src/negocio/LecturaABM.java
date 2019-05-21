@@ -31,20 +31,20 @@ public class LecturaABM {
 	}
 	
 	public void modificar(Lectura l) throws Exception{
-		/*falta implementar los traer
-		 if(traer() == null) {
-			throw new Exception("ERROR: no existe una lectura con ese ...");
-		}*/
+		
+		 if(traer(l.getIdLectura()) == null) {
+			throw new Exception("ERROR: no existe una lectura con ese id");
+		}
 		LecturaDao.getInstance().actualizar(l);
 	}
 	
-	public void eliminar(int idLectura) throws Exception{ 
-		Lectura l = LecturaDao.getInstance().traerLectura();//falta el traer
+	public void eliminar(long idLectura) throws Exception{ 
+		Lectura l = LecturaDao.getInstance().traerLectura(idLectura);
 		if(l == null) throw new Exception("ERROR: no existe la lectura");
 		LecturaDao.getInstance().eliminar(l);
 	}
 	
-	public Lectura traer(int idLectura) {
+	public Lectura traer(long idLectura) {
 		return LecturaDao.getInstance().traerLectura(idLectura);
 	}
 	

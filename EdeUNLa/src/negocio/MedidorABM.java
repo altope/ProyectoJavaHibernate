@@ -1,6 +1,8 @@
 package negocio;
 
 
+import java.util.List;
+
 import dao.MedidorDao;
 import datos.Cliente;
 import datos.Medidor;
@@ -20,9 +22,9 @@ public class MedidorABM {
 	}
 	
 	public int agregar(int nroSerie, String categoria, double energiaConsumida, String direccion, Cliente cliente, boolean esBaja) throws Exception{
-		if(traer(cliente)!= null) {
-			throw new Exception("ERROR: este cliente ya tiene datos de contacto");
-		}
+		/*if(traer(cliente)!= null) {
+			throw new Exception("ERROR: este medidor ya existe");
+		}*/
 		Medidor m = new Medidor(nroSerie, categoria, energiaConsumida, direccion, cliente, esBaja);
 		return MedidorDao.getInstance().agregar(m);
 	}
@@ -44,11 +46,12 @@ public class MedidorABM {
 		return MedidorDao.getInstance().traerMedidor(idMedidor);
 	}
 	
+	/*
 	public Medidor traer(Cliente cliente) {
 		return MedidorDao.getInstance().traerMedidor(cliente);
 	}
-	
-	public Medidor traer() {
+	*/
+	public List<Medidor> traer() {
 		return MedidorDao.getInstance().traerMedidores();
 	}
 	

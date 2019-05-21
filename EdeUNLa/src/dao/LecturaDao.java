@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import datos.Lectura;
+import datos.Zona;
 
 public class LecturaDao {
 	private static Session session;
@@ -77,6 +78,18 @@ public class LecturaDao {
 		} finally {
 			session.close();
 		}
+	}
+	
+	public Lectura traerLectura(long idLectura) throws HibernateException {
+		Lectura objeto = null;
+
+		try {
+			iniciaOperacion();
+			objeto = (Lectura) session.get(Lectura.class, idLectura);
+		} finally {
+			session.close();
+		}
+		return objeto;
 	}
 
 /*

@@ -78,7 +78,7 @@ public class ZonaDao {
 		}
 	}
 
-	public Zona traerZona(int idZona) throws HibernateException {
+	public Zona traerZona(long idZona) throws HibernateException {
 		Zona objeto = null;
 
 		try {

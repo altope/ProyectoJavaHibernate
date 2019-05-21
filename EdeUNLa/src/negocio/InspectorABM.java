@@ -1,7 +1,10 @@
 package negocio;
 
+import java.util.Set;
+
 import dao.InspectorDao;
 import datos.Inspector;
+import datos.Zona;
 
 public class InspectorABM {
 
@@ -16,17 +19,17 @@ public class InspectorABM {
 		return instancia;
 	}
 	
-	public int agregar(String telefono, String movil, String domicilio, String email, Cliente cliente) throws Exception{
-		if(traer(cliente)!= null) {
+	public int agregar(int nroLegajo, int dni, Set<Zona> lstZonas, String nombre, String apellido) throws Exception{
+		/*if(traer()!= null) {
 			throw new Exception("ERROR: este cliente ya tiene datos de contacto");
-		}
-		Inspector p = new Inspector(telefono, movil, domicilio, email, cliente);
+		}*/
+		Inspector p = new Inspector(nroLegajo, dni, lstZonas, nombre, apellido);
 		return InspectorDao.getInstance().agregar(p);
 	}
 	
 	public void modificar(Inspector p) throws Exception{
 		if(traer(p.getIdInspertor()) == null) {
-			throw new Exception("ERROR: no existe un contacto con ese id");
+			throw new Exception("ERROR: no existe un inspector con ese id");
 		}
 		InspectorDao.getInstance().actualizar(p);
 	}
@@ -41,8 +44,5 @@ public class InspectorABM {
 		return InspectorDao.getInstance().traerInspector(idInspector);
 	}
 	
-	public Inspector traer(Inspector inspector) {
-		return InspectorDao.getInstance().traerInspector(inspector);
-	}
 	
 }

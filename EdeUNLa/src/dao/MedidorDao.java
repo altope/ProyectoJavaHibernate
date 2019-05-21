@@ -85,12 +85,13 @@ public class MedidorDao {
 
 		try {
 			iniciaOperacion();
-			objeto = (Medidor) session.createQuery("from Medidor a where a.nroSerie=" + id).uniqueResult();
+			objeto = (Medidor) session.createQuery("from Medidor a where a.nroSerie=" + idMedidor).uniqueResult();
 		} finally {
 			session.close();
 		}
 		return objeto;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	public List<Medidor> traerMedidores() throws HibernateException{

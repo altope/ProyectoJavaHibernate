@@ -35,7 +35,7 @@ public class ZonaABM {
 		ZonaDao.getInstance().actualizar(z);
 	}
 	
-	public void eliminar(int idZona) throws Exception{ 
+	public void eliminar(long idZona) throws Exception{ 
 		Zona z = ZonaDao.getInstance().traerZona(idZona);
 		if(z == null) throw new Exception("ERROR: no existe la zona");
 		ZonaDao.getInstance().eliminar(z);

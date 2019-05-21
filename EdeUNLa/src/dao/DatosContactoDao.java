@@ -77,9 +77,8 @@ public class DatosContactoDao {
 		}
 	}
 
-	public DatosContacto traerDatosContacto(int idContacto) throws HibernateException {
+	public DatosContacto traerDatosContacto(long idContacto) throws HibernateException {
 		DatosContacto objeto = null;
-
 		try {
 			iniciaOperacion();
 			objeto = (DatosContacto) session.get(DatosContacto.class, idContacto);
@@ -89,6 +88,7 @@ public class DatosContactoDao {
 		return objeto;
 	}
 
+	/*ERROR: por el atributo cliente dice que el get no soporta eso, capaz este mal usado;
 	public DatosContacto traerDatosContacto(Cliente cliente) throws HibernateException {
 		DatosContacto objeto = null;
 
@@ -99,6 +99,6 @@ public class DatosContactoDao {
 			session.close();
 		}
 		return objeto;
-	}
+	}*/
 
 }

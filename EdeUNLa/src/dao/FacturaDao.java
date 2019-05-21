@@ -80,7 +80,7 @@ public class FacturaDao {
 		}
 	}
 	
-	public Factura traerFactura(int idFactura){
+	public Factura traerFactura(long idFactura){
 		Factura objeto = null;
 		try {
 			iniciaOperacion();

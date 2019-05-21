@@ -2,6 +2,7 @@ package datos;
 
 public class DetalleAlta {
 
+	private long idDetalleAlta;
 	private String detalleConcepto;
 	private String unidad;
 	private boolean superaLimite;
@@ -15,6 +16,14 @@ public class DetalleAlta {
 		this.unidad = unidad;
 		this.superaLimite = superaLimite;
 		this.valor = valor;
+	}
+
+	public long getIdDetalleAlta() {
+		return idDetalleAlta;
+	}
+
+	protected void setIdDetalleAlta(long idDetalleAlta) {
+		this.idDetalleAlta = idDetalleAlta;
 	}
 
 	public String getDetalleConcepto() {

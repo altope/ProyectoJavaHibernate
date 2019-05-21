@@ -41,7 +41,7 @@ public class FacturaABM {
 		FacturaDao.getInstance().eliminar(f);
 	}
 	
-	public Factura traer(int idFactura) {
+	public Factura traer(long idFactura) {
 		return FacturaDao.getInstance().traerFactura(idFactura);
 	}
 	// hay variaciones en los traer der factura para no traer listas
